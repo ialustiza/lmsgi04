@@ -2,7 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
     <!-- 
-    Definimos el elemento raíz del XML. En este caso será "recetas"
+    Definimos el elemento raíz del XML. En este caso será Gestion Parque
     Con el atributo "type" decimos de qué tipo va ser ese elemento
     Luego tendremos que definir qué estructura tiene ese tipo
     -->
@@ -45,7 +45,7 @@
             <xs:element name="precio" type="xs:decimal" />
         </xs:sequence>
         <xs:attribute name="codigo" type="xs:string" use="required" />
-        <xs:attribute name="categoria" type="xs:string" use="required" />
+        <xs:attribute name="categoria" type="xs:string" use="optional" />
     </xs:complexType>
 
     <!-- Define complex type for "TAtracciones" -->
