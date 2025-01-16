@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- 
+    Definimos el elemento raíz del XML. En este caso será "recetas"
+    Con el atributo "type" decimos de qué tipo va ser ese elemento
+    Luego tendremos que definir qué estructura tiene ese tipo
+    -->
+    <xs:element name="gestionParque" type="datosParque" />
+
+    <!-- 
+        Definimos el tipo de elemento datosParque
+        "complexType" define el nuevo tipo y con "name" lo identificamos
+        "sequence" determina el orden de los elementos que componen el tipo
+        "element" define el elemento. Con maxOccurs="unbounded" le decimos que puede aparecer muchas veces
+    -->
+     <xs:complexType name="datosParque">
+        <xs:sequence>
+            <xs:element name="gastrobar" type="Tgastrobar" minOccurs="1" maxOccurs="unbounded" />
+            <xs:element name="atracciones" type="TAtracciones" minOccurs="1" maxOccurs="unbounded" />
+            <xs:element name="eventos" type="TEventos" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Define complex type for "Tgastrobar" -->
+    <xs:complexType name="Tgastrobar">
+        <xs:sequence>
+            <xs:element name="ubicacion" type="xs:string" />
+            <xs:element name="platos" type="TPlatos" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Define complex type for "TPlatos" -->
+    <xs:complexType name="TPlatos">
+        <xs:sequence>
+            <xs:element name="plato" type="TPlato" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Define complex type for "TPlato" -->
+    <xs:complexType name="TPlato">
+        <xs:sequence>
+            <xs:element name="nom_plato" type="xs:string" />
+            <xs:element name="foto" type="xs:string" />
+            <xs:element name="precio" type="xs:decimal" />
+        </xs:sequence>
+        <xs:attribute name="codigo" type="xs:string" use="required" />
+        <xs:attribute name="categoria" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <!-- Define complex type for "TAtracciones" -->
+    <xs:complexType name="TAtracciones">
+        <xs:sequence>
+            <xs:element name="atraccion" type="TAtraccion" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Define complex type for "TAtraccion" -->
+    <xs:complexType name="TAtraccion">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string" />
+            <xs:element name="operador" type="xs:string" />
+            <xs:element name="restricciones" type="TRestricciones" />
+        </xs:sequence>
+        <xs:attribute name="tipo" type="xs:string" use="required" />
+        <xs:attribute name="duracion" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <!-- Define complex type for "TRestricciones" -->
+    <xs:complexType name="TRestricciones">
+        <xs:sequence>
+            <xs:element name="edadMinima" type="xs:int" />
+            <xs:element name="pesoMinimo" type="xs:int" />
+            <xs:element name="pesoMaximo" type="xs:int" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Define complex type for "TEventos" -->
+    <xs:complexType name="TEventos">
+        <xs:sequence>
+            <xs:element name="evento" type="TEvento" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Define complex type for "TEvento" -->
+    <xs:complexType name="TEvento">
+        <xs:sequence>
+            <xs:element name="descripcion" type="xs:string" />
+            <xs:element name="espectadores" type="xs:int" />
+            <xs:element name="fechaHora" type="xs:dateTime" />
+            <xs:element name="comentarios" type="TComentarios" />
+        </xs:sequence>
+        <xs:attribute name="lugar" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <!-- Define complex type for "TComentarios" -->
+    <xs:complexType name="TComentarios">
+        <xs:sequence>
+            <xs:element name="comentario" type="TComentario" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Define complex type for "TComentario" -->
+    <xs:complexType name="TComentario">
+        <xs:simpleContent>
+            <xs:extension base="xs:string" >
+                <xs:attribute name="fecha" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+</xs:schema>
