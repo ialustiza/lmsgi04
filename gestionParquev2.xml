@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    XML fichero de base para ejercicio parque atracciones
+    Enlace al fichero DTD
+-->
+<gestionParque xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="gestionParque2.xsd">
+    <gastrobar>
+        <ubicacion>Zona Norte</ubicacion>
+        <platos>
+            <plato codigo="001" categoria="Comida Rápida">
+                <nom_plato>Pizza Margarita</nom_plato>
+                <foto>pizza_margarita.jpg</foto>
+                <precio>8.50</precio>
+            </plato>
+            <plato codigo="002" categoria="Entrante">
+                <nom_plato>Ensalada César</nom_plato>
+                <foto>ensalada_cesar.jpg</foto>
+                <precio>6.00</precio>
+            </plato>
+        </platos>
+    </gastrobar>
+    <atracciones>
+        <atraccion tipo="Adrenalina" duracion="2 minutos">
+            <nombre>Montaña Rusa</nombre>
+            <operador>Juan Pérez</operador>
+            <restricciones>
+                <edadMinima>12</edadMinima>
+                <pesoMinimo>15</pesoMinimo>
+                <pesoMaximo>120</pesoMaximo>
+            </restricciones>
+        </atraccion>
+        <atraccion tipo="Familiar" duracion="3 minutos">
+            <nombre>Carros Locos</nombre>
+            <operador>María López</operador>
+            <restricciones>
+                <edadMinima>5</edadMinima>
+                <pesoMinimo>15</pesoMinimo>
+                <pesoMaximo>100</pesoMaximo>
+            </restricciones>
+        </atraccion>
+    </atracciones>
+    <eventos>
+        <evento lugar="Pabellon Central">
+            <descripcion>Concierto Navideño</descripcion>
+            <espectadores>200</espectadores>
+            <fechaHora>2024-12-25T18:00:00</fechaHora>
+            <comentarios>
+                <comentario fecha="Lunes">Espectacular evento.</comentario>
+                <comentario fecha="Martes">No puedo esperar para ir.</comentario>
+            </comentarios>
+        </evento>
+    </eventos>
+</gestionParque>
