@@ -4,7 +4,7 @@
     Enlace al fichero DTD
 -->
 <gestionParque xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:noNamespaceSchemaLocation="gestionParque2.xsd">
+ xsi:noNamespaceSchemaLocation="gestionParqueV2.xsd">
     <gastrobar>
         <ubicacion>Zona Norte</ubicacion>
         <platos>
@@ -46,8 +46,8 @@
             <espectadores>200</espectadores>
             <fechaHora>2024-12-25T18:00:00</fechaHora>
             <comentarios>
-                <comentario fecha="Lunes">Espectacular evento.</comentario>
-                <comentario fecha="Martes">No puedo esperar para ir.</comentario>
+                <comentario fecha="2025-01-20">Espectacular evento.</comentario>
+                <comentario fecha="2025-01-21">No puedo esperar para ir.</comentario>
             </comentarios>
         </evento>
     </eventos>

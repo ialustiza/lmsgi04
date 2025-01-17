@@ -6,7 +6,7 @@
     Con el atributo "type" decimos de qué tipo va ser ese elemento
     Luego tendremos que definir qué estructura tiene ese tipo
     -->
-    <xs:element name="gestionParque" type="datosParque" />
+    <xs:element name="gestionParque" type="TGestionParque" />
 
     <!-- 
         Definimos el tipo de elemento datosParque
@@ -14,16 +14,16 @@
         "sequence" determina el orden de los elementos que componen el tipo
         "element" define el elemento. Con maxOccurs="unbounded" le decimos que puede aparecer muchas veces
     -->
-     <xs:complexType name="datosParque">
+     <xs:complexType name="TGestionParque">
         <xs:sequence>
-            <xs:element name="gastrobar" type="Tgastrobar" minOccurs="1" maxOccurs="unbounded" />
+            <xs:element name="gastrobar" type="TGastrobar" minOccurs="1" maxOccurs="unbounded" />
             <xs:element name="atracciones" type="TAtracciones" minOccurs="1" maxOccurs="unbounded" />
             <xs:element name="eventos" type="TEventos" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
 
     <!-- Define complex type for "Tgastrobar" -->
-    <xs:complexType name="Tgastrobar">
+    <xs:complexType name="TGastrobar">
         <xs:sequence>
             <xs:element name="ubicacion" type="xs:string" />
             <xs:element name="platos" type="TPlatos" />
@@ -78,7 +78,7 @@
     <!-- Define complex type for "TEventos" -->
     <xs:complexType name="TEventos">
         <xs:sequence>
-            <xs:element name="evento" type="TEvento" maxOccurs="unbounded" />
+            <xs:element name="evento" type="TEvento" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
 
