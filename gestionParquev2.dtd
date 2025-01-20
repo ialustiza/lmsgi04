@@ -1,0 +1,45 @@
+<!-- Definimos la estructura del documento XML "gestionParque2.xml" -->
+<!ELEMENT gestionParque (gastrobar+, atracciones+, eventos*)>
+
+<!ELEMENT gastrobar (ubicacion, platos)>
+<!ELEMENT atracciones (atraccion*)>
+<!ELEMENT eventos (evento*)>
+
+<!-- Definimos el elemento "gastrobar" -->
+<!ELEMENT ubicacion (#PCDATA)>
+<!ELEMENT platos (plato+)>
+
+<!-- Definimos el elemento "plato" -->
+<!ELEMENT plato (nom_plato, foto, precio)>
+<!ATTLIST plato codigo CDATA #REQUIRED
+                  categoria CDATA #IMPLIED>
+
+<!-- Definimos los tipos de datos de cada elemento dentro de "plato" -->
+<!ELEMENT nom_plato (#PCDATA)>
+<!ELEMENT foto (#PCDATA)>
+<!ELEMENT precio (#PCDATA)>
+
+<!-- Definimos el elemento "atraccion" -->
+<!ELEMENT atraccion (nombre, operador?, restricciones)>
+<!ATTLIST atraccion tipo CDATA #REQUIRED
+                     duracion CDATA #REQUIRED>
+
+<!-- Definimos los tipos de datos de cada elemento dentro de "atraccion" -->
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT operador (#PCDATA)>
+<!ELEMENT restricciones (edadMinima, pesoMinimo, pesoMaximo)>
+<!ELEMENT edadMinima (#PCDATA)>
+<!ELEMENT pesoMinimo (#PCDATA)>
+<!ELEMENT pesoMaximo (#PCDATA)>
+
+<!-- Definimos el elemento "evento" -->
+<!ELEMENT evento (descripcion, espectadores, fechaHora, comentarios?)>
+<!ATTLIST evento lugar CDATA #REQUIRED>
+
+<!-- Definimos los tipos de datos de cada elemento dentro de "evento" -->
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT espectadores (#PCDATA)>
+<!ELEMENT fechaHora (#PCDATA)>
+<!ELEMENT comentarios (comentario*)>
+<!ELEMENT comentario (#PCDATA)>
+<!ATTLIST comentario fecha CDATA #IMPLIED>

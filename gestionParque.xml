@@ -8,12 +8,12 @@
     <gastrobar>
         <ubicacion>Zona Norte</ubicacion>
         <platos>
-            <plato codigo="001" categoria="Comida Rápida">
+            <plato codigo="SF001" categoria="Comida Rápida">
                 <nom_plato>Pizza Margarita</nom_plato>
                 <foto>pizza_margarita.jpg</foto>
                 <precio>8.50</precio>
             </plato>
-            <plato codigo="002" categoria="Entrante">
+            <plato codigo="AW002" categoria="Entrante">
                 <nom_plato>Ensalada César</nom_plato>
                 <foto>ensalada_cesar.jpg</foto>
                 <precio>6.00</precio>
@@ -41,7 +41,7 @@
         </atraccion>
     </atracciones>
     <eventos>
-        <evento lugar="Pabellon Central">
+        <evento lugar="pabellon1">
             <descripcion>Concierto Navideño</descripcion>
             <espectadores>200</espectadores>
             <fechaHora>2024-12-25T18:00:00</fechaHora>
