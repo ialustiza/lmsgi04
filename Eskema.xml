@@ -1,0 +1,206 @@
+<!-- 
+    HTML
+-->
+
+<!--ETIQUETAS SEMANTICAS-->
+<header>: encabezados
+<nav>: zona para la navegación con enlaces
+<main>: contenido principal de la página
+<article>: contenidos autónomos e independientes
+<section>: agrupar elementos de la misma temática
+<aside>: contenidos relacionados
+<footer>: pies de página
+
+<!--ESTRUCTURA-->
+<!DOCTYPE html>
+<html Lang=“es”>
+ <head>
+ <meta charset="utf-8">
+ <title>Primera página HTML5</title>
+ </head>
+    <!-- Comentario -->
+ <body>
+ <h1> Esto es HTML5h1</h1>
+ <p>Contenido de la página web.</p>
+ </body>
+</html>
+
+<!--TEXTO-->
+<h1>Encabezado de nivel 1.</h1>
+<p>Párrafo </p>
+<b>negrita </b> <sub>subíndices</sub>
+<i>cursiva </i> <sup>superíndices</sup>
+<u>subrayada </u> <strong>resaltado</strong>
+
+<!--LISTAS-->
+<!--Ordenadas-->
+<ol>
+<li> Item 1 </li>
+<li> Item 2</li>
+</ol>
+
+<!--Desordenadas-->
+<ul>
+<li>Item 1</li>
+<li>Item 2</li>
+</ul>
+
+<!--Definida-->
+<dl>
+<dt>Palabra</dt>
+<dd>Definición</dd>
+<dt>Término</dt>
+<dd>Descripción</dd>
+</dl>
+
+<!--TABLAS-->
+<table>
+ <caption>Título</caption>
+ <tr><th>Título 1</th><th>Título 2</th></tr>
+ <tr><td>Fila1 Celda1</td><td>F2 C2</td></tr>
+ <tr><td>F2 C1</td><td>F2 C2</td></tr>
+</table>
+
+<!--FORMULARIO-->
+<form action="mailto:tucorreo@ejemplo.com" method="post" >
+ <label for="nombre">Nombre:</label>
+ <input type="text" id="nombre" name="nombre">
+ <label for="mensaje">Mensaje:</label>
+ <textarea id="mensaje" name="mensaje" rows="4" cols="50">
+ Escribe en esta caja
+ </textarea>
+ <input type="submit" value="Enviar">
+</form>
+
+<!--ENLACES-->
+<a href=“ruta“ target=“_blank”>Texto</a>
+· ruta web: https://www.birt.eus
+· ruta relativa: img/foto.jpg
+· ruta absoluta: c:/datos/pdf/doc.pdf
+
+<!--IMAGENES-->
+<img src="ruta" alt="descripción" class="imagen-float"/>
+<p> Texto rodea imagen </p>
+<p class=“fin-float”> Texto deja de rodear </p>
+
+<!--MULTIMEDIA-->
+<video controls autoplay muted loop>
+ <source src=“ruta" type="video/mp4">
+ <source src=“ruta" type="video/ogg">
+ Tu navegador no soporta el elemento
+</video>
+<audio controls autoplay muted loop>
+ <source src=“ruta" type=“audio/mpeg">
+</video>
+
+<!-- 
+    CSS
+-->
+
+<!--APLICAR-->
+<!--Atributo “style”-->
+<p style=“color:Orange; Font-family:arial;”>
+Texto.
+</p>
+<!--Etiqueta “style”-->
+<head>
+<style type=“text/css”>
+h3 { color:green;}
+p { color: orange; font-family: Verdana;}
+</style>
+</head>
+<!--Fichero externo:-->
+<head>
+<link rel=“stylesheet” href=“formato.css”>
+</head>
+<!--Formato.css-->
+h3 { color:green;}
+p { color: Orange; Font-family: Verdana;}
+
+<!--COLOR Y FONDO-->
+body {
+ color: DogerBlue;
+ background-color: Tomato;
+ background-image: url(“./fondo.jpg”);
+}
+
+<!--TEXTO-->
+h3 {
+ text-align: center;
+ line-height: 0.8;
+ text-decoration: underline;
+}
+
+<!--FUENTES-->
+p {
+ font-size: 14px;
+ font-family: “Times New Roman”
+ font.-weight: bold;
+ font-style: italic;
+}
+
+<!--CLASES E IDS-->
+.clase-azul {color:blue}
+#id-cabecera (width: 50%; background-color:Tomato;)
+<h1 id=“id-cabecera”>…</h1>
+<p class=“clase_azul”>…</p>
+
+<!--MODELO DE CAJA-->
+p {
+ height: 200PX
+ width: 50%;
+ margin: 25px 50px 75px 100px;
+ padding: 25px 0px 25px 0px;
+ border: 2px solid Violet;
+}
+
+<!--POSICIONAMIENTOS BASICOS-->
+.bloque {display: block;}
+.línea {display: inline-block; vertical-align:middle}
+<div class=“línea”>
+ <img srv=“logo.jpg”>
+ <h2> Título </h2>
+</div>
+
+<!--FLOAT-->
+.imagen-float {
+float: right;
+}
+.fin-float {
+ clear: both;
+}
+
+<!--POSITION-->
+posicion-padre {
+ position: relative;
+ z-index: 2;
+}
+.posicion-absoluta-fija {
+ position: absolute | fixed;
+ top: 20px;
+ left: 50px;
+ z-index: 3;
+}
+
+<!--UNIDADES-->
+Absolutas
+• px
+• mm
+• cm
+Relativas
+• rem
+• %
+• em
+
+<!--FLEXBOX-->
+#contenedor-padre {
+ display: flex;
+ flex-direction: row | colum;
+ flex-wrap: wrap | nowrap;
+ justify-content: space-around | … ;
+ align-items: center | … ;
+}
+#contenedor-hijo {
+ flex-basis: 20% ;
+ align-self: flex-start | … ;
+}
